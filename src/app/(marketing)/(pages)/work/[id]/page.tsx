@@ -12,7 +12,7 @@ const content = [
 
 const Insights = () => {
   return (
-    <div className="pt-10 pb-4">
+    <div className="pb-4">
       <h1 className="header-text translate-y-[0.08em] mb-3">Newsroom</h1>
 
       <div className="grid grid-cols-2 md:grid-cols-3 gap-6">

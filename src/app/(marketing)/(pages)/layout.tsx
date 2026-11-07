@@ -3,5 +3,5 @@ export default function PagesLayout({
 }: {
   children: React.ReactNode;
 }) {
-  return <main className="min-h-screen px-6 pt-20">{children}</main>;
+  return <main className="min-h-screen px-6 pt-30">{children}</main>;
 }

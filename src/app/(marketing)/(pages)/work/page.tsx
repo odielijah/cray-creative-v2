@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import Image from "next/image";
+import ParallaxImage from "@/app/(marketing)/components/shared/parallax-image";
 import { ChevronsDown, ChevronDown } from "lucide-react";
 import Link from "next/link";
 
@@ -77,7 +77,7 @@ const Work = () => {
       : content.filter((item) => item.category === activeCategory);
 
   return (
-    <div className="relative pt-10 pb-4 flex flex-col gap-5">
+    <div className="relative pb-40 flex flex-col gap-5">
       <div className="flex justify-between items-end mb-20">
         <h1 className="flex flex-col header-text translate-y-[0.08em]">
           <span>Our</span>
@@ -85,7 +85,7 @@ const Work = () => {
             Wor<span className="inline-block -scale-x-100 ml-[0.02em]">k</span>
           </div>
         </h1>
-        <p className="w-130 mr-10 text-xl mb-1">
+        <p className="w-130 mr-10 text-xl mb-1 translate-y-20">
           Lorem ipsum dolor sit, amet consectetur adipisicing elit. Unde,
           temporibus dolorum nostrum sit doloribus nam scum. Odit, autem
           doloribus delectus?
@@ -167,12 +167,11 @@ const Work = () => {
               href={`/work/${item.id}`}
               className="group relative block aspect-4/5 overflow-hidden cursor-pointer"
             >
-              <Image
+              <ParallaxImage
                 src={item.src}
                 alt={item.title}
-                fill
                 sizes="(min-width: 768px) 33vw, 50vw"
-                className="object-cover transition-transform duration-500 ease-out group-hover:scale-110"
+                className="transition-transform duration-500 ease-out group-hover:scale-110"
               />
             </Link>
 

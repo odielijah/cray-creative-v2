@@ -69,26 +69,23 @@ const Footer = () => {
   return (
     <footer
       id="footer"
-      className="footer px-6 relative flex h-dvh flex-col overflow-hidden pt-20 md:pt-28"
+      className="footer bg-[#9401fc] text-white px-6 relative flex h-dvh flex-col overflow-hidden pt-20 md:pt-28"
     >
       <div className="grid min-h-50 grid-cols-1 gap-16 text-[12px] md:grid-cols-4 md:gap-8">
         {/* Brand + info */}
         <div className="flex flex-col gap-16 md:col-span-4">
-          <h1 className="text-[70px] max-w-sm leading-[0.8] tracking-tighter font-bold">
-            Let&apos;s start from nothin
+          <h1 className="text-[50px] max-w-md leading-[0.9] tracking-tight font-bold">
+            Let&apos;s work on something together
           </h1>
 
-          <div className="grid grid-cols-1 gap-12 border-t border-current/20 pt-10 text-[16px] md:grid-cols-2">
-            <div className="footer-section">
-              <h2 className="footer-heading">Work with Us</h2>
-              <LinkList links={contactInfo} />
-            </div>
-
-            <div className="footer-section">
-              <h2 className="footer-heading">Sitemap</h2>
-              <div className="grid grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 gap-12 border-t border-white/30 pt-10 text-lg md:grid-cols-2">
+            <div className="footer-section md:col-start-2">
+              <h2 className="footer-heading font-medium">Sitemap</h2>
+              <div className="grid grid-cols-3">
                 {sitemapColumns.map((column, i) => (
-                  <LinkList key={i} links={column} />
+                  <div key={i} className={i === 1 ? "col-start-2" : ""}>
+                    <LinkList links={column} />
+                  </div>
                 ))}
               </div>
             </div>

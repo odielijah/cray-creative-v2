@@ -25,8 +25,8 @@ export default function InfiniteSlider() {
     >
       <div className="absolute top-35 left-6 text-black z-50">
         <h1 className="header-text w-[80%] flex flex-col">
-          <span>Imagination</span> 
-          <span>execution</span>
+          <span>Cray</span> 
+          <span>create</span>
         </h1>
       </div>
 

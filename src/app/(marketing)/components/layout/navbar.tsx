@@ -3,7 +3,7 @@ import Logo from "@/app/(marketing)/components/shared/logo";
 
 const rightLinksData = [
   { label: "Work", href: "/work" },
-  { label: "Services", href: "/services" },
+  { label: "Studio", href: "/studio" },
   { label: "Merch", href: "/merch" },
   { label: "Contact", href: "/contact" },
 ];
