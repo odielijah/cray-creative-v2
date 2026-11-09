@@ -1,3 +1,6 @@
+"use client";
+
+import { usePathname } from "next/navigation";
 import Link from "next/link";
 import Logo from "@/app/(marketing)/components/shared/logo";
 
@@ -8,14 +11,20 @@ const rightLinksData = [
   { label: "Contact", href: "/contact" },
 ];
 
+const isActive = (pathname: string, href: string) =>
+  pathname === href || pathname.startsWith(`${href}/`);
+
 export function RightLinks() {
+  const pathname = usePathname();
+
   return (
     <div className="flex items-center justify-end gap-[3vw]">
       {rightLinksData.map((link) => (
         <Link
           key={link.href}
           href={link.href}
-          className="pointer-events-auto text-md"
+          aria-current={isActive(pathname, link.href) ? "page" : undefined}
+          className="pointer-events-auto text-md aria-[current=page]:italic"
         >
           {link.label}
         </Link>

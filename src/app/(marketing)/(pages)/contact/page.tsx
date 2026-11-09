@@ -1,6 +1,6 @@
 import React from "react";
 
-const EMAIL = "cray.creative@gmail.com";
+const EMAIL = "greetings@cray.com";
 
 const SOCIALS = [
   { label: "LinkedIn", href: "https://www.linkedin.com/" },
@@ -25,40 +25,38 @@ const Contact = () => {
 
         {/* Contact details + form */}
         <div className="grid gap-16 pt-12 md:grid-cols-2 md:gap-20 md:pt-16">
-          <div className="flex flex-col items-start gap-6">
+          <div className="flex flex-col items-start">
             <p className="text-lg text-foreground/60">
               Prefer to write directly?
             </p>
 
-            <div className="flex flex-col gap-3">
-              <a
-                href={`mailto:${EMAIL}`}
-                className="w-fit text-[clamp(2rem,4.4vw,4.25rem)] font-heading leading-[0.95] tracking-[-0.02em] transition-opacity hover:opacity-60"
-              >
-                {EMAIL.split("@")[0]}
-                <br />@{EMAIL.split("@")[1]}
-              </a>
+            <a
+              href={`mailto:${EMAIL}`}
+              className="w-fit text-[clamp(2rem,4.4vw,4rem)] font-bold pb-6 leading-[0.95] tracking-tighter underline transition-opacity hover:opacity-60"
+            >
+              {EMAIL.split("@")[0]}
+              <br />@{EMAIL.split("@")[1]}
+            </a>
 
-              <ul className="flex items-center text-lg text-foreground/50">
-                {SOCIALS.map(({ label, href }, i) => (
-                  <li key={label} className="flex items-center">
-                    {i > 0 && (
-                      <span className="mx-4" aria-hidden="true">
-                        |
-                      </span>
-                    )}
-                    <a
-                      href={href}
-                      target="_blank"
-                      rel="noreferrer"
-                      className="transition-colors hover:text-foreground"
-                    >
-                      {label}
-                    </a>
-                  </li>
-                ))}
-              </ul>
-            </div>
+            <ul className="flex items-center text-lg text-foreground/50">
+              {SOCIALS.map(({ label, href }, i) => (
+                <li key={label} className="flex items-center">
+                  {i > 0 && (
+                    <span className="mx-4" aria-hidden="true">
+                      |
+                    </span>
+                  )}
+                  <a
+                    href={href}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="transition-colors hover:text-foreground"
+                  >
+                    {label}
+                  </a>
+                </li>
+              ))}
+            </ul>
           </div>
 
           <form className="flex flex-col gap-8 text-foreground">

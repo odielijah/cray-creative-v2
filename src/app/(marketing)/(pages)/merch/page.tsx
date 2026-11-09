@@ -29,9 +29,14 @@ const placement = [
 const Merch = () => {
   return (
     <div className="pb-40">
-      <ul className="grid grid-cols-2 gap-x-4 gap-y-10 md:grid-cols-[2fr_1fr_2fr_1fr] md:gap-x-7 md:gap-y-0">
+      <div className="grid grid-cols-2 gap-x-4 gap-y-10 md:grid-cols-[2fr_1fr_2fr_1fr] md:gap-x-7 md:gap-y-0">
+        {/* Intro — fills the empty right half of the first row on desktop */}
+        <h1 className="col-span-2 mb-6 max-w-3xl text-[4rem] font-bold leading-[1.1] tracking-tight md:col-start-3 md:row-start-1 md:mb-0 md:self-start">
+          Made in the studio, worn by the culture vulture ha ha blah blah.
+        </h1>
+
         {products.map(({ name, src }, i) => (
-          <li
+          <article
             key={name}
             className={`group md:row-start-(--row) ${placement[i % 4]}`}
             style={{ "--row": Math.floor(i / 2) + 1 } as CSSProperties}
@@ -49,9 +54,9 @@ const Merch = () => {
               <span>{name}</span>
               <span>{String(i + 1).padStart(2, "0")}</span>
             </div>
-          </li>
+          </article>
         ))}
-      </ul>
+      </div>
     </div>
   );
 };
