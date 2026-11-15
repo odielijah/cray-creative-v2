@@ -1,6 +1,13 @@
-const Logo = () => {
+type LogoProps = {
+  /** Extra classes for the svg, e.g. "h-11 w-auto" to resize it. */
+  className?: string;
+};
+
+// Draws at 34 x 64px unless a className overrides the size.
+const Logo = ({ className }: LogoProps) => {
   return (
     <svg
+      className={className}
       width="34"
       height="64"
       viewBox="0 0 34 64"

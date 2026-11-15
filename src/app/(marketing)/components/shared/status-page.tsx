@@ -8,18 +8,15 @@ type StatusPageProps = {
   lines: string[];
   /** The link in the bottom-left corner. */
   link?: { label: string; href: string };
+  /** Optional extra content under the text, e.g. a sign-up form. */
+  children?: React.ReactNode;
 };
 
-/**
- * Full-screen layout for "nothing to see here" pages (404, coming soon):
- * a big heading and a couple of lines centred on the screen, with a single
- * link along the bottom.
- * Expects to sit inside the pages layout (px-6 pt-30).
- */
 const StatusPage = ({
   title,
   lines,
   link = { label: "Back Home", href: "/" },
+  children,
 }: StatusPageProps) => {
   return (
     // 7.5rem = the pages layout's top padding, so this fills the screen exactly.
@@ -38,21 +35,19 @@ const StatusPage = ({
             </span>
           ))}
         </p>
+        {children}
       </div>
 
-      {/* Bottom: divider line and the way out */}
-      <div className="border-t border-foreground/20 pt-8">
-        <Link
-          href={link.href}
-          className="group inline-flex items-center gap-4 text-lg"
-        >
-          <ArrowLeft
-            className="h-4 w-4 transition-transform group-hover:-translate-x-1"
-            strokeWidth={2}
-          />
-          {link.label}
-        </Link>
-      </div>
+      <Link
+        href={link.href}
+        className="group inline-flex items-center gap-4 text-lg"
+      >
+        <ArrowLeft
+          className="h-4 w-4 transition-transform group-hover:-translate-x-1"
+          strokeWidth={2}
+        />
+        {link.label}
+      </Link>
     </div>
   );
 };

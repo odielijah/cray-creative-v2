@@ -72,11 +72,17 @@ body {
     @apply transition-opacity hover:opacity-50;
   }
 
-  /* "CRAY CREATIVE" is ~4.26em wide in Bebas Neue, so 23vw makes it fill the
-     screen edge to edge on every device. Margins are in em so they shrink
-     along with the text. */
+  /* The wordmark stretches to exactly the width of the small text rows above
+     and below it: the screen width minus the footer's side padding (2 x 1.5rem)
+     and the rows' 0.25rem right margin, divided by how wide "CRAY CREATIVE" is
+     in em. footer.tsx measures that width (and the empty space the font leaves
+     left of the "C") once the font has loaded and stores both in the two
+     variables; 4.26 and 0 are only stand-ins until then. Margins are in em so
+     they shrink along with the text. */
   .footer-wordmark {
-    @apply block translate-y-[0.08em] -mt-[0.1em] -mb-[0.05em] -mx-6 whitespace-nowrap font-heading text-[23vw] leading-[0.9] tracking-[-0.03em];
+    @apply block translate-y-[0.08em] -mt-[0.1em] -mb-[0.05em] whitespace-nowrap text-left font-heading leading-[0.9] tracking-[-0.03em];
+    font-size: calc((100vw - 3.25rem) / var(--wordmark-width-em, 4.26));
+    margin-left: calc(var(--wordmark-left-gap-em, 0) * -1em);
   }
 
   .footer-wordmark-flip {

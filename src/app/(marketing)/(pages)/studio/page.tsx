@@ -41,12 +41,42 @@ const stats = [
 ];
 
 const team: TeamMember[] = [
-  { name: "Famimi", role: "Creative Director", src: "/images/team/member-1.png", color: "#f4c95d" },
-  { name: "Adams", role: "Content Creator", src: "/images/team/member-2.png", color: "#f28b82" },
-  { name: "Tek", role: "Designer", src: "/images/team/member-3.png", color: "#8ab4f8" },
-  { name: "Amara", role: "Photographer", src: "/images/team/member-4.png", color: "#c58af9" },
-  { name: "Titi", role: "Developer", src: "/images/team/member-5.png", color: "#81c995" },
-  { name: "Timi", role: "Artist", src: "/images/team/member-6.png", color: "#ff9e6d" },
+  {
+    name: "Famimi",
+    role: "Creative Director",
+    src: "/images/team/member-1.png",
+    color: "#f4c95d",
+  },
+  {
+    name: "Adams",
+    role: "Content Creator",
+    src: "/images/team/member-2.png",
+    color: "#f28b82",
+  },
+  {
+    name: "Tek",
+    role: "Designer",
+    src: "/images/team/member-3.png",
+    color: "#8ab4f8",
+  },
+  {
+    name: "Amara",
+    role: "Photographer",
+    src: "/images/team/member-4.png",
+    color: "#c58af9",
+  },
+  {
+    name: "Titi",
+    role: "Developer",
+    src: "/images/team/member-5.png",
+    color: "#81c995",
+  },
+  {
+    name: "Timi",
+    role: "Artist",
+    src: "/images/team/member-6.png",
+    color: "#ff9e6d",
+  },
 ];
 
 const Studio = () => {
@@ -75,7 +105,7 @@ const Studio = () => {
           />
         </div>
       </section>
-      
+
       {/* ---------- Stats ---------- */}
       <section className="">
         <h2 className="max-w-[9em] font-heading text-[clamp(3.5rem,8vw,9rem)] uppercase leading-[0.82] tracking-[-0.02em]">
@@ -112,16 +142,6 @@ const Studio = () => {
         <span>A small team,</span>
         <span>a shared obsession</span>
       </TeamWeb>
-
-      {/* ---------- Call to action ---------- */}
-      <Link
-        href="/contact"
-        className="group block border-t border-foreground/20 pt-6"
-      >
-        <span className="header-text mt-6 block translate-y-[0.08em] transition-opacity group-hover:opacity-50">
-          Let&apos;s connect
-        </span>
-      </Link>
     </div>
   );
 };

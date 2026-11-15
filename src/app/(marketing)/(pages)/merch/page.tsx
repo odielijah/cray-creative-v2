@@ -1,4 +1,4 @@
-import Image from "next/image";
+import ParallaxImage from "@/app/(marketing)/components/shared/parallax-image";
 
 // Placeholder products — swap names/images for real merch.
 const products = [
@@ -42,10 +42,10 @@ const ProductCard = ({ name, src, number, className }: ProductCardProps) => {
   return (
     <article className={`group ${className}`}>
       <div className="relative aspect-4/5 overflow-hidden bg-foreground/5">
-        <Image
+        {/* Drifts slowly inside its frame as the page scrolls */}
+        <ParallaxImage
           src={src}
           alt={name}
-          fill
           sizes="(min-width: 1024px) 33vw, 50vw"
           className="object-cover transition-transform duration-700 ease-out group-hover:scale-105"
         />
@@ -75,7 +75,7 @@ const Merch = () => {
           ? ["lg:col-start-1", "lg:col-start-2 lg:self-end"] // small one sits at the bottom
           : ["lg:col-start-3", "lg:col-start-4"];
 
-        const textClass = `col-span-2 mb-6 max-w-3xl text-[clamp(2.25rem,6vw,4rem)] font-medium leading-[1.1] tracking-tight lg:row-start-1 lg:mb-0 lg:self-start ${textColumn}`;
+        const textClass = `col-span-2 mb-6 max-w-4xl text-[clamp(2.25rem,8vw,5.5rem)] font-heading leading-[1.1] tracking-[-0.02em] lg:row-start-1 lg:mb-0 lg:self-start ${textColumn}`;
         const statement = statements[rowIndex];
 
         return (

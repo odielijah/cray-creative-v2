@@ -8,6 +8,10 @@ import { useLenis } from "lenis/react";
 import { Menu, X } from "lucide-react";
 import Logo from "@/app/(marketing)/components/shared/logo";
 
+// Size of the logo in the navbar: 44px tall (it is 64px at full size), with
+// the width following automatically. Change h-11 to make it bigger or smaller.
+const logoSize = "h-11 w-auto";
+
 const rightLinksData = [
   { label: "Work", href: "/work" },
   { label: "Studio", href: "/studio" },
@@ -126,7 +130,7 @@ export default function Navbar() {
           <div className="flex items-center justify-start gap-[5vw]">
             {/* Invisible spacer so links stay where they were */}
             <div className="invisible w-13" aria-hidden>
-              <Logo />
+              <Logo className={logoSize} />
             </div>
           </div>
 
@@ -153,7 +157,7 @@ export default function Navbar() {
       {/* Unblended layer: the real logo */}
       <div className="pointer-events-none fixed left-6 top-0 z-100 flex min-h-14 items-center py-5">
         <Link href="/" onClick={closeMenu} className="pointer-events-auto w-13">
-          <Logo />
+          <Logo className={logoSize} />
         </Link>
       </div>
 

@@ -6,7 +6,7 @@ const ComingSoon = () => {
   return (
     <StatusPage
       title="Coming soon"
-      lines={["We're still making this one", "Check back shortly"]}
+      lines={["We're still making this one."]}
     />
   );
 };
