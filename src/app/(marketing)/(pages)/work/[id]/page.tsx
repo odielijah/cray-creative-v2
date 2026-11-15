@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import NextProjectLink from "@/app/(marketing)/components/shared/next-project-link";
 import ParallaxImage from "@/app/(marketing)/components/shared/parallax-image";
 import { getWork, works } from "@/app/(marketing)/constants/works";
 
@@ -72,17 +73,7 @@ const WorkDetail = async ({ params }: Props) => {
       </div>
 
       {/* Next project */}
-      <Link
-        href={`/work/${next.id}`}
-        className="group mt-24 block border-t border-foreground/20 pt-6 md:mt-32"
-      >
-        <span className="text-lg tracking-wide text-foreground/50">
-          Next project
-        </span>
-        <span className="header-text mt-6 block translate-y-[0.08em] transition-opacity group-hover:opacity-50">
-          {next.title}
-        </span>
-      </Link>
+      <NextProjectLink work={next} />
     </article>
   );
 };

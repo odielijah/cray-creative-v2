@@ -7,7 +7,11 @@ import Footer from "./footer";
 const ConditionalFooter = () => {
   const pathname = usePathname();
 
-  const showFooter = pathname === "/work" || pathname === "/studio";
+  const showFooter =
+    pathname === "/work" ||
+    pathname.startsWith("/work/") ||
+    pathname === "/studio" ||
+    pathname === "/merch";
 
   if (!showFooter) return null;
 

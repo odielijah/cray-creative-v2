@@ -1,5 +1,3 @@
-import React from "react";
-
 const EMAIL = "greetings@cray.com";
 
 const SOCIALS = [
@@ -15,16 +13,16 @@ const field =
 
 const Contact = () => {
   return (
-    <div className="">
-      <section className="">
-        <div className="mb-16 flex flex-col gap-10 md:mb-20 md:flex-row md:items-end md:justify-between">
-          <h1 className="flex flex-col justify-center header-text text-[24rem] translate-y-[0.08em]">
-            say hello.
-          </h1>
-        </div>
+    <div className="pb-24 md:pb-40">
+      <section>
+        {/* Font size follows the screen width (24vw), but never below 4.5rem
+            or above 24rem, so the heading always fits on one line. */}
+        <h1 className="header-text mb-10 translate-y-[0.08em] whitespace-nowrap text-[clamp(4.5rem,24vw,24rem)] md:mb-20">
+          say hello.
+        </h1>
 
-        {/* Contact details + form */}
-        <div className="grid gap-16 pt-12 md:grid-cols-2 md:gap-20 md:pt-16">
+        {/* Contact details + form: stacked on mobile, side by side from md up */}
+        <div className="grid gap-16 pt-8 md:grid-cols-2 md:gap-20 md:pt-16">
           <div className="flex flex-col items-start">
             <p className="text-lg text-foreground/60">
               Prefer to write directly?
@@ -38,7 +36,7 @@ const Contact = () => {
               <br />@{EMAIL.split("@")[1]}
             </a>
 
-            <ul className="flex items-center text-lg text-foreground/50">
+            <ul className="flex flex-wrap items-center gap-y-2 text-lg text-foreground/50">
               {SOCIALS.map(({ label, href }, i) => (
                 <li key={label} className="flex items-center">
                   {i > 0 && (

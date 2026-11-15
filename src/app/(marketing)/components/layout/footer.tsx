@@ -8,15 +8,6 @@ import { ChevronsUp } from "lucide-react";
 
 type FooterLink = { label: string; href: string };
 
-const contactInfo: FooterLink[] = [
-  {
-    label: "contact@detroit-talents.com",
-    href: "mailto:contact@detroit-talents.com",
-  },
-  { label: "job@detroit-talents.com", href: "mailto:job@detroit-talents.com" },
-  { label: "+33 6 74 18 02 68", href: "tel:+33674180268" },
-];
-
 const sitemapColumns: FooterLink[][] = [
   [
     { label: "Index", href: "/" },
@@ -69,12 +60,12 @@ const Footer = () => {
   return (
     <footer
       id="footer"
-      className="footer bg-[#9401fc] text-white px-6 relative flex h-dvh flex-col overflow-hidden pt-20 md:pt-28"
+      className="footer bg-[#9401fc] text-white px-6 relative flex min-h-dvh flex-col overflow-hidden pt-16 md:pt-28"
     >
       <div className="grid min-h-50 grid-cols-1 gap-16 text-[12px] md:grid-cols-4 md:gap-8">
         {/* Brand + info */}
         <div className="flex flex-col gap-16 md:col-span-4">
-          <h1 className="text-[50px] max-w-md leading-[0.9] tracking-tight font-bold">
+          <h1 className="text-4xl md:text-[50px] max-w-md leading-[0.9] tracking-tight font-bold">
             Let&apos;s work on something together
           </h1>
 
@@ -94,8 +85,9 @@ const Footer = () => {
       </div>
 
       {/* Giant Wordmark */}
-      <div className="mt-auto flex flex-col w-full justify-center overflow-visible text-center">
-        <div className="flex justify-between mb-2 mr-1">
+      <div className="mt-auto pt-16 flex flex-col w-full justify-center overflow-visible text-center">
+        {/* Wraps onto two lines on narrow phones instead of squashing */}
+        <div className="flex flex-wrap justify-between gap-x-6 gap-y-3 mb-2 mr-1">
           <button
             type="button"
             onClick={scrollToTop}

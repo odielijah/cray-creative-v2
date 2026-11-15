@@ -17,6 +17,18 @@
   --color-footer-foreground: #000000;
 }
 
+/* Infinite sideways scroll used by MarqueeLink. The track is two identical
+   halves, so sliding it left by 50% lands exactly where it started. */
+@theme {
+  --animate-marquee: marquee 30s linear infinite;
+
+  @keyframes marquee {
+    to {
+      transform: translateX(-50%);
+    }
+  }
+}
+
 html,
 body {
   scrollbar-width: none;
@@ -60,8 +72,11 @@ body {
     @apply transition-opacity hover:opacity-50;
   }
 
+  /* "CRAY CREATIVE" is ~4.26em wide in Bebas Neue, so 23vw makes it fill the
+     screen edge to edge on every device. Margins are in em so they shrink
+     along with the text. */
   .footer-wordmark {
-    @apply block translate-y-[0.08em] -mt-10 -mb-5 -mx-6 whitespace-nowrap font-heading text-[clamp(24.8rem,18.5vw,28rem)] leading-[0.9] tracking-[-0.03em];
+    @apply block translate-y-[0.08em] -mt-[0.1em] -mb-[0.05em] -mx-6 whitespace-nowrap font-heading text-[23vw] leading-[0.9] tracking-[-0.03em];
   }
 
   .footer-wordmark-flip {

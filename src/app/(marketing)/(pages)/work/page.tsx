@@ -24,14 +24,15 @@ const Work = () => {
 
   return (
     <div className="relative pb-40 flex flex-col gap-5">
-      <div className="flex justify-between items-end mb-20">
+      {/* Heading + intro: stacked on mobile, side by side from md up */}
+      <div className="flex flex-col gap-8 mb-12 md:flex-row md:justify-between md:items-end md:mb-20">
         <h1 className="flex flex-col header-text translate-y-[0.08em]">
           <span>Our</span>
-          <div>
+          <span>
             Wor<span className="inline-block -scale-x-100 ml-[0.02em]">k</span>
-          </div>
+          </span>
         </h1>
-        <p className="w-130 mr-10 text-xl mb-1 translate-y-20">
+        <p className="max-w-130 text-lg md:text-xl md:mr-10 md:mb-1 md:translate-y-20">
           Lorem ipsum dolor sit, amet consectetur adipisicing elit. Unde,
           temporibus dolorum nostrum sit doloribus nam scum. Odit, autem
           doloribus delectus?
@@ -41,7 +42,7 @@ const Work = () => {
       <h2 className="text-3xl font-bold">2020 - Present</h2>
       <div className="bg-black/10 h-px my-5" />
 
-      <div className="grid grid-cols-2 gap-6 justify-center mb-15 text-lg">
+      <div className="grid grid-cols-2 gap-6 justify-center mb-10 md:mb-15 text-base md:text-lg">
         <div>
           <button
             className="flex items-center gap-4 cursor-pointer"
@@ -67,7 +68,8 @@ const Work = () => {
         </div>
 
         {openDropdown && (
-          <div className="font-heading col-start-2 py-5 text-6xl max-w-150">
+          // Full width on mobile, right-hand column from md up
+          <div className="font-heading col-span-2 py-5 text-4xl max-w-150 md:col-span-1 md:col-start-2 md:text-6xl">
             {categories.map((category, index) => (
               <span key={category}>
                 <button
@@ -101,7 +103,7 @@ const Work = () => {
 
       <div
         id="work-grid"
-        className="grid grid-cols-2 md:grid-cols-3 gap-x-6 gap-y-10"
+        className="grid grid-cols-2 md:grid-cols-3 gap-x-4 gap-y-10 md:gap-x-6"
       >
         {filteredContent.map((item) => (
           <div key={item.id} className="group">
@@ -121,8 +123,9 @@ const Work = () => {
               />
             </Link>
 
-            <div className="flex items-center justify-between pt-3">
-              <span className="">{item.title}</span>
+            {/* Title and category stack on mobile, share a line from md up */}
+            <div className="flex flex-col pt-3 text-sm md:flex-row md:items-center md:justify-between md:gap-4 md:text-base">
+              <span>{item.title}</span>
               <h3 className="text-foreground/50">{item.category}</h3>
             </div>
           </div>
